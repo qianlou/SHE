@@ -20,8 +20,8 @@ alu.o: alu.cpp alu.hpp omp_constants.hpp
 encryption.o: encryption.hpp
 	$(CC) $(CCFLAGS) -o encryption.o -c encryption.hpp $(LDFLAGS)
 
-shiftNet: shiftNet.o encryption.o alu.o matrix.o logistic.o io.o metrics.o
-	$(CC) $(CCFLAGS) -o shiftNet shiftNet.o alu.o matrix.o  io.o metrics.o $(LDFLAGS)
+SHE: SHE.o encryption.o alu.o matrix.o logistic.o io.o metrics.o
+	$(CC) $(CCFLAGS) -o SHE SHE.o alu.o matrix.o  io.o metrics.o $(LDFLAGS)
 
 clean:
 	rm -f test

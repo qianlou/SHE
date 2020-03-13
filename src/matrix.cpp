@@ -134,7 +134,8 @@ void shiftDot(LweSample* result, LweSample** a, int* b, const int cols, const TF
   printf("elem_shift time:%f\n",(bs_end-bs_begin)*clocks2seconds/2);
 
   bs_begin=clock();
-  reduce_add(result, temp, cols, ck, size);
+  //reduce_add(result, temp, cols, ck, size);
+  seq_add(result, temp, cols, ck, size);
   bs_end=clock();
   printf("reduce_add time:%f\n",(bs_end-bs_begin)*clocks2seconds/2);
   /*for(int i = 0; i < cols; i++) {

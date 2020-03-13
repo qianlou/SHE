@@ -85,7 +85,7 @@ int main(){
         const double clocks2seconds = 1. / CLOCKS_PER_SEC;
 	// setup parameters
 	typedef int8_t num_type ;
-	size_t bits = sizeof(num_type) * 8;
+	size_t bits = sizeof(num_type) * 4;
 	const int minimum_lambda = 80;
 	TFheGateBootstrappingParameterSet* params = new_default_gate_bootstrapping_parameters(minimum_lambda);
 	const TFheGateBootstrappingSecretKeySet* sk = new_random_gate_bootstrapping_secret_keyset(params);
@@ -105,7 +105,7 @@ int main(){
         
         printf("]\nBe=[");
 	for(int i=0; i< input_size; i++){
-		Be[i]=-1;
+		Be[i]=1;
 	        printf(" %d", Be[i]);
 	}
         printf("]\n");
